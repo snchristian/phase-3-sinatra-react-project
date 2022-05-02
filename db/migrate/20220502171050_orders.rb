@@ -9,5 +9,6 @@ class Orders < ActiveRecord::Migration[6.1]
       t.integer :credit_card_number
       t.string :card_holder_name
       t.integer :cvc
+    end
   end
 end
