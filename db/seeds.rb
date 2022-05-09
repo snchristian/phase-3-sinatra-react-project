@@ -2,7 +2,7 @@ puts "🌱 Seeding spices..."
 
 # Seed your database here
 
-Customer.create(name:"Linda Dean", phone_number:2026358545,email:"casesque@gmailwe.com")
+Customer.create(name: "Linda Dean", phone_number:2026358545,email:"casesque@gmailwe.com")
 Customer.create(name:"Tabitha",phone_number:4051694038,email:"TabithaV@gmail.com")
 Customer.create(name:"Louise",phone_number:5510987332,email:"LouiseBelcher@yahoo.com")
 Customer.create(name:"Jinx",phone_number:5098894938,email:"JinxPiltover@hotmail.com")
@@ -19,13 +19,13 @@ Candy.create(name:"Pop Rocks",price: 0.99, inventory:8,image:"https://cdn6.bigco
 Candy.create(name:"Mary Jane",price: 0.33, inventory:20,image:"http://www.ohnuts.com/showImage.cfm/extra-large/Mary-Jane11.jpg",quantity:0)
 Candy.create(name:"Double Bubble ",price: 0.25, inventory:16,image:"https://cdn.shopify.com/s/files/1/0269/2121/products/Dubble_Bubble_Gum.jpeg?v=1402444674",quantity:0)
 Candy.create(name:"Bit-O-Honey",price: 0.33, inventory:9,image:"https://onlinegrocerymarket.com/wp-content/uploads/2016/06/SweetGourmet-Bit-O-Honey-Retro-Candy-0.jpg",quantity:0)
-Candy.create(name:"Choward's Violet Mints",price: 1.49, inventory:5,image:"https://www.candywarehouse.com/item-images/125356-01_c-howards-violet-mint-squares-candy-packs-24-piece-box.jpg?resizeid=102&resizeh=500&resizew=500",quantity:0)
 Candy.create(name:"Bubble Gum Cigars",price: 0.59, inventory:36,image:"http://www.ohnuts.com/showImage.cfm/extra-large/El-Bubble-1.jpg",quantity:0)
+Candy.create(name:"Choward's Violet Mints",price: 1.49, inventory:5,image:"https://www.candywarehouse.com/item-images/125356-01_c-howards-violet-mint-squares-candy-packs-24-piece-box.jpg?resizeid=102&resizeh=500&resizew=500",quantity:0)
 
-Order.create(order_status:"Shipped", address:"4453 Elliott Street", state:"New Hampshire", zipcode:"03101",credit_card_number:4416587891748630,:card_holder_name: "Linda Dean", cvc:563, customer_id:1)
-Order.create(order_status:"Incomplete"address:"1102 Ferrell Street", state:"Maine", zipcode:"04619",credit_card_number:4013578198765606,:card_holder_name: "Tabitha Victoria",cvc:588, customer_id:2)
-Order.create(order_status:"Processing", address:"4708 Terry Lane", state:"Florida", zipcode:"32801",credit_card_number:5322661549404464,:card_holder_name: "Louise Belcher",cvc:962, customer_id:3)
-Order.create(order_status:"Shipped",address:"100 Southern Street", state:"New York", zipcode:"11758",credit_card_number:340358027461160,:card_holder_name: "Jinx Piltover",cvc:215, customer_id:4)
+# Order.create(order_status:"Shipped", address:"4453 Elliott Street", state:"New Hampshire", zipcode:"03101",credit_card_number:4416587891748630,card_holder_name: "Linda Dean", cvc:563, customer_id:1)
+# Order.create(order_status:"Incomplete",address:"1102 Ferrell Street", state:"Maine", zipcode:"04619",credit_card_number:4013578198765606,card_holder_name: "Tabitha Victoria",cvc:588, customer_id:2)
+# Order.create(order_status:"Processing", address:"4708 Terry Lane", state:"Florida", zipcode:"32801",credit_card_number:5322661549404464,card_holder_name: "Louise Belcher",cvc:962, customer_id:3)
+# Order.create(order_status:"Shipped",address:"100 Southern Street", state:"New York", zipcode:"11758",credit_card_number:340358027461160,card_holder_name: "Jinx Piltover",cvc:215, customer_id:4)
 
 OrderCandy.create(quantity:2,candy_id:1,order_id:1)
 OrderCandy.create(quantity:2,candy_id:2,order_id:1)

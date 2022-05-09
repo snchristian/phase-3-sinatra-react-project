@@ -12,6 +12,7 @@ class Order < ActiveRecord::Base
                 image:"#{candyItem.candy.image}",
                 quantity: "#{candyItem.quantity}"    
             }
+        end
          
     end
 
@@ -20,7 +21,5 @@ class Order < ActiveRecord::Base
         order_candies.update_candy_Inventory
         end
     end
-
-
 
 end
