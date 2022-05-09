@@ -22,4 +22,9 @@ class Order < ActiveRecord::Base
         end
     end
 
+    def remove_candy id
+        remove_candy = self.order_candies.find_by(candy_id: id)
+        remove_candy.delete
+    end
+
 end

@@ -23,12 +23,12 @@ class OrdersController < ApplicationController
         candy.to_json
         end
 
-  
     delete '/orders/delete/:id' do
-    last_order=Order.last
-    remove_candy =last_order.candies.find(params[:id]).destroy
-    remove_candy.to_json
-end
+        last_order=Order.last
+        removed_candy=last_order.candies.find(params[:id])
+        remove_candy =last_order.remove_candy params[:id]
+        removed_candy.to_json
+    end
 
     
 end
