@@ -5,29 +5,30 @@ class OrdersController < ApplicationController
         order.to_json(include: :candies)
     end
 
-    get '/orders/total/:id' do
-        order= Order.find(params[:id]).candies.map(&:price).sum
-        order.to_json
-    end
     
-    get'/orders' do 
+    get'/order_last' do 
         last_order=Order.last.full_Order
-        last_order.to_json
+        last_order.to_json()
     end
 
-    post '/orders' do
+    post '/customers/orders/order_candies/' do
         customer = Customer.find_or_create_by(params[:customer])
-        order = customer.orders.create(params[:order])
-        candy = order.order_candies.create(params[:candy])
-        updatedI = Order.last.quantity1
-        candy.to_json
-        end
+        new_order = customer.orders.create(params[:order])
+        new_candy = new_order.order_candies.create(params[:candy])
+        updated_candy_inventory = Order.last.update_candies_inventory
+        new_candy.to_json()
+    end
 
-    delete '/orders/delete/:id' do
+    delete '/candies/:id/delete_order' do
         last_order=Order.last
-        removed_candy=last_order.candies.find(params[:id])
-        remove_candy =last_order.remove_candy params[:id]
-        removed_candy.to_json
+        remove_candy =last_order.remove_order_candies_by_candy_id params[:id]
+        remove_candy.to_json
+    end
+
+    get '/order/order_candies/candies/:id' do 
+        fullOrder = Order.find(params[:id])
+        fullOrder.to_json(:include =>{:order_candies =>{:include => :candy}})
+
     end
 
     
