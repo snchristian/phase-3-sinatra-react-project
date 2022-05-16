@@ -3,7 +3,7 @@ class Order < ActiveRecord::Base
     has_many    :order_candies
     has_many    :candies, through: :order_candies
 
-    def full_Order
+    def full_order
         self.order_candies.map do |candyItem|
             fullOrder={
                 id:candyItem.candy.id,
